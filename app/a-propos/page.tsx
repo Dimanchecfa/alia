@@ -18,11 +18,28 @@ import {
   MessageCircle,
 } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "À propos",
+  title: "À propos d'ALIA Industrie — Histoire, valeurs, distinctions 2024",
   description:
-    "Industriel burkinabè depuis 2009, ALIA Industrie unit agroalimentaire durable et énergies renouvelables. Découvrez notre histoire, nos valeurs et nos distinctions ministérielles 2024.",
+    "Industriel burkinabè depuis 2009, ALIA Industrie unit agroalimentaire durable (farine de maïs, 50 t/j) et énergies renouvelables. Découvrez notre histoire, nos valeurs et nos distinctions ministérielles 2024 (Étalon d'argent).",
+  keywords: [
+    "histoire ALIA Industrie",
+    "Eulogue Tapsoba",
+    "industrie burkinabè 2009",
+    "Étalon argent 2024",
+    "valeurs entreprise",
+  ],
+  alternates: { canonical: "/a-propos" },
+  openGraph: {
+    title: "À propos d'ALIA Industrie",
+    description:
+      "17 ans d'expertise industrielle au Burkina Faso. Distinctions ministérielles 2024.",
+    url: "/a-propos",
+    type: "article",
+  },
 };
 
 const values = [
@@ -63,6 +80,22 @@ export default function AProposPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "À propos", url: "/a-propos" },
+          ]),
+          webPageSchema({
+            type: "AboutPage",
+            url: "/a-propos",
+            name: "À propos d'ALIA Industrie",
+            description:
+              "Histoire, valeurs et distinctions d'ALIA Industrie, industriel burkinabè depuis 2009.",
+          }),
+        ]}
+        id="schema-a-propos"
+      />
       <PageBanner
         number="01"
         title="À propos"

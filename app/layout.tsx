@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Caveat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import AOSInit from "@/components/AOSInit";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+} from "@/lib/seo/schemas";
+import { siteConfig } from "@/lib/seo/site-config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,66 +33,89 @@ const caveat = Caveat({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#F57C00",
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alia-industrie-bf.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "ALIA Industrie — Agroalimentaire & Énergies Renouvelables au Burkina Faso",
-    template: "%s · ALIA Industrie",
+    default: `${siteConfig.name} — Agroalimentaire & Énergies Renouvelables au Burkina Faso`,
+    template: `%s · ${siteConfig.name}`,
   },
-  description:
-    "Industriel burkinabè depuis 2009, ALIA Industrie unit agroalimentaire durable (farine de maïs, gritz, semoule) et énergies renouvelables au cœur du Burkina Faso.",
-  keywords: [
-    "ALIA Industrie",
-    "agroalimentaire Burkina Faso",
-    "minoterie Ouagadougou",
-    "farine de maïs",
-    "énergies renouvelables Burkina",
-    "panneaux solaires Burkina",
-    "équipements industriels",
-    "Kossodo",
-  ],
-  authors: [{ name: "ALIA Industrie" }],
-  creator: "ALIA Industrie",
-  publisher: "ALIA Industrie",
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  category: "Business",
+  classification: "Industrial Manufacturing",
+
+  alternates: {
+    canonical: "/",
+  },
+
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+
   openGraph: {
     type: "website",
-    locale: "fr_BF",
-    url: "https://alia-industrie-bf.com",
-    siteName: "ALIA Industrie",
-    title: "ALIA Industrie — Agroalimentaire & Énergies Renouvelables",
-    description:
-      "Industriel burkinabè depuis 2009. Production de farine de maïs (50 t/j), distribution d'équipements industriels et solutions solaires.",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — Agroalimentaire & Énergies Renouvelables`,
+    description: siteConfig.description,
     images: [
       {
-        url: "/images/equipe-alia.jpg",
-        width: 1600,
-        height: 1066,
-        alt: "L'équipe ALIA Industrie à Kossodo, Ouagadougou",
+        url: siteConfig.ogImage,
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
+        alt: `L'équipe ${siteConfig.name} à Kossodo, Ouagadougou`,
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "ALIA Industrie — Agroalimentaire & Énergies Renouvelables",
-    description:
-      "Industriel burkinabè depuis 2009 — agroalimentaire durable et énergies renouvelables.",
-    images: ["/images/equipe-alia.jpg"],
+    title: `${siteConfig.name} — Agroalimentaire & Énergies Renouvelables`,
+    description: siteConfig.shortDescription,
+    images: [siteConfig.ogImage],
   },
+
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
+
+  // Géolocalisation (important pour SEO local au Burkina Faso)
+  other: {
+    "geo.region": "BF-CEN",
+    "geo.placename": "Ouagadougou",
+    "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+  },
+
+  icons: {
+    icon: [{ url: "/images/logo.png", type: "image/png" }],
+    apple: "/images/logo.png",
+  },
+
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -99,6 +129,11 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable} ${caveat.variable}`}
     >
       <body className="bg-white text-alia-grey antialiased">
+        {/* Schemas globaux injectés dans <body> — visibles sur toutes les pages */}
+        <JsonLd data={organizationSchema()} id="schema-organization" />
+        <JsonLd data={localBusinessSchema()} id="schema-localbusiness" />
+        <JsonLd data={websiteSchema()} id="schema-website" />
+
         <AOSInit />
         <Header />
         {children}

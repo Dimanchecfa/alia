@@ -3,16 +3,61 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
 import RealisationsGrid from "@/components/sections/RealisationsGrid";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  itemListSchema,
+  webPageSchema,
+} from "@/lib/seo/schemas";
+import { realisations } from "@/lib/data/realisations";
 
 export const metadata: Metadata = {
-  title: "Nos réalisations",
+  title:
+    "Nos réalisations — Solaire, agroalimentaire, maintenance · Burkina Faso & Côte d'Ivoire",
   description:
-    "Sélection de projets livrés au Burkina Faso et en Côte d'Ivoire — solaire industriel, off-grid résidentiel et installations agroalimentaires.",
+    "Sélection de 9+ projets livrés au Burkina Faso et en Côte d'Ivoire : centrale solaire 45 KWc Grand Bassam, système 24,78 KWc Yamoussoukro, minoterie Kossodo, et plus.",
+  keywords: [
+    "réalisations solaire Burkina",
+    "centrale solaire Grand Bassam",
+    "panneaux solaires Yamoussoukro",
+    "projets ALIA Industrie",
+    "Université 2iE solaire",
+    "minoterie Kossodo",
+  ],
+  alternates: { canonical: "/realisations" },
+  openGraph: {
+    title: "Nos réalisations — ALIA Industrie",
+    description:
+      "9+ projets livrés en solaire industriel, off-grid résidentiel et agroalimentaire.",
+    url: "/realisations",
+  },
 };
 
 export default function RealisationsPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Réalisations", url: "/realisations" },
+          ]),
+          webPageSchema({
+            type: "CollectionPage",
+            url: "/realisations",
+            name: "Nos réalisations — ALIA Industrie",
+            description:
+              "Projets livrés en solaire et agroalimentaire au Burkina Faso et en Côte d'Ivoire.",
+          }),
+          itemListSchema(
+            realisations.map((r) => ({
+              name: `${r.title} — ${r.location}`,
+              url: `/realisations#${r.id}`,
+            }))
+          ),
+        ]}
+        id="schema-realisations"
+      />
       <PageBanner
         number="03"
         title="Nos réalisations"

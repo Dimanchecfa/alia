@@ -18,15 +18,39 @@ import {
 } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
 import CatalogueCategoryGrid from "@/components/sections/CatalogueCategoryGrid";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  webPageSchema,
+  productSchema,
+} from "@/lib/seo/schemas";
 import {
   productionItems,
   distributionCategories,
 } from "@/lib/data/catalogue";
 
 export const metadata: Metadata = {
-  title: "Notre catalogue",
+  title:
+    "Notre catalogue — Farine de maïs ALIA & 26+ équipements industriels distribués",
   description:
-    "Notre production maison (farine de maïs, gritz, semoule) et notre offre de distribution d'équipements industriels — 26+ références.",
+    "Production maison ALIA (farine de maïs, semoule) et distribution de 26+ équipements industriels : composants électriques (Schneider, ABB), mécaniques (SKF), solaire (Victron). Catalogue PDF téléchargeable.",
+  keywords: [
+    "catalogue ALIA Industrie",
+    "farine maïs Burkina",
+    "semoule maïs Burkina",
+    "équipements électriques Burkina",
+    "roulements SKF Burkina",
+    "panneaux solaires Victron",
+    "groupes électrogènes Burkina",
+    "automates Schneider ABB",
+  ],
+  alternates: { canonical: "/catalogue" },
+  openGraph: {
+    title: "Catalogue ALIA Industrie — 2 produits maison + 26+ équipements",
+    description:
+      "Production farine de maïs locale + distribution équipements industriels certifiés.",
+    url: "/catalogue",
+  },
 };
 
 const iconMap: Record<string, LucideIcon> = {
@@ -38,8 +62,48 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function CataloguePage() {
+  // Génère un schema Product pour chaque produit ALIA + chaque item distribution
+  const allProductSchemas = [
+    ...productionItems.map((p) =>
+      productSchema({
+        name: `${p.title} ALIA`,
+        description: p.description,
+        image: `/images/catalogue/production/${p.filename}`,
+        category: "Agroalimentaire — Production maison ALIA",
+        brand: "ALIA Industrie",
+      })
+    ),
+    ...distributionCategories.flatMap((cat) =>
+      cat.items.map((it) =>
+        productSchema({
+          name: it.title,
+          description: it.description,
+          image: `/images/catalogue/distribution/${cat.id}/${it.filename}`,
+          category: cat.title,
+        })
+      )
+    ),
+  ];
+
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Catalogue", url: "/catalogue" },
+          ]),
+          webPageSchema({
+            type: "CollectionPage",
+            url: "/catalogue",
+            name: "Catalogue ALIA Industrie",
+            description:
+              "Production farine de maïs + distribution d'équipements industriels.",
+          }),
+          ...allProductSchemas,
+        ]}
+        id="schema-catalogue"
+      />
       <PageBanner
         number="04"
         title="Notre catalogue"

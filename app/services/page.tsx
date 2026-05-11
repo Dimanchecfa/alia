@@ -22,11 +22,28 @@ import {
   Zap,
 } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Nos services",
+  title:
+    "Nos services — Agroalimentaire, Énergies Renouvelables, Maintenance industrielle",
   description:
-    "Plus qu'un fournisseur, un partenaire technique à chaque étape : agroalimentaire, énergies renouvelables, conseil, installation, maintenance.",
+    "Partenaire technique à chaque étape : conseil, installation solaire on/off-grid, transformation agroalimentaire (maïs 50t/j), distribution d'équipements et maintenance industrielle au Burkina Faso.",
+  keywords: [
+    "services industriels Burkina",
+    "installation solaire Ouagadougou",
+    "minoterie maïs",
+    "maintenance industrielle Burkina",
+    "études faisabilité solaire",
+  ],
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Nos services — ALIA Industrie",
+    description:
+      "Agroalimentaire & énergies renouvelables — partenaire technique de A à Z.",
+    url: "/services",
+  },
 };
 
 const transverses = [
@@ -63,6 +80,22 @@ const process = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Nos services", url: "/services" },
+          ]),
+          webPageSchema({
+            type: "WebPage",
+            url: "/services",
+            name: "Nos services — ALIA Industrie",
+            description:
+              "Agroalimentaire, énergies renouvelables et services transverses au Burkina Faso.",
+          }),
+        ]}
+        id="schema-services"
+      />
       <PageBanner
         number="02"
         title="Nos services"

@@ -3,11 +3,27 @@ import PageBanner from "@/components/ui/PageBanner";
 import ContactSection from "@/components/sections/ContactSection";
 import Link from "next/link";
 import { MapPin, Phone, Mail, MessageCircle, ArrowRight, Globe, Navigation } from "lucide-react";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact — Devis, partenariat, SAV · Kossodo, Ouagadougou",
   description:
-    "Nous contacter à Kossodo, Ouagadougou. Devis, partenariat, renseignements techniques, SAV — réponse sous 48h.",
+    "Contactez ALIA Industrie à Kossodo, Ouagadougou. Téléphone +226 70 75 77 13, email contact@alia-industrie-bf.com. Devis, partenariat, renseignements techniques, SAV — réponse sous 48h.",
+  keywords: [
+    "contact ALIA Industrie",
+    "Kossodo Ouagadougou",
+    "devis industriel Burkina",
+    "support technique ALIA",
+    "ALIA téléphone email",
+  ],
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — ALIA Industrie",
+    description:
+      "Devis, partenariat, support — réponse sous 48h. Kossodo, Ouagadougou.",
+    url: "/contact",
+  },
 };
 
 const channels = [
@@ -49,6 +65,22 @@ const channels = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Contact", url: "/contact" },
+          ]),
+          webPageSchema({
+            type: "ContactPage",
+            url: "/contact",
+            name: "Contact — ALIA Industrie",
+            description:
+              "Nous contacter à Kossodo, Ouagadougou. Devis, partenariat, SAV.",
+          }),
+        ]}
+        id="schema-contact"
+      />
       <PageBanner
         number="06"
         title="Nous contacter"

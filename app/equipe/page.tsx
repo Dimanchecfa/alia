@@ -10,11 +10,29 @@ import {
   Users,
 } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Notre équipe",
+  title: "Notre équipe — Le promoteur Eulogue Tapsoba & l'équipe dirigeante",
   description:
-    "Découvrez le promoteur Eulogue Tapsoba et l'équipe dirigeante d'ALIA Industrie au service de l'industrie burkinabè.",
+    "Rencontrez M. Eulogue Tapsoba, promoteur d'ALIA Industrie, ainsi que l'équipe dirigeante : DAF, DRH, Directeur Technique et Directrice Marketing. Une équipe burkinabè au service de l'industrie locale.",
+  keywords: [
+    "équipe ALIA Industrie",
+    "Eulogue Tapsoba",
+    "Mathieu Compaoré DAF",
+    "Geoffroy Koudougou DRH",
+    "Justin Kabré Directeur Technique",
+    "Alida Tapsoba Marketing",
+    "promoteur burkinabè",
+  ],
+  alternates: { canonical: "/equipe" },
+  openGraph: {
+    title: "Notre équipe — ALIA Industrie",
+    description:
+      "Le promoteur Eulogue Tapsoba et l'équipe dirigeante d'ALIA Industrie.",
+    url: "/equipe",
+  },
 };
 
 const LinkedInIcon = () => (
@@ -33,20 +51,20 @@ const team = [
     bg: "bg-alia-blue-soft",
   },
   {
-    photo: "/images/teams/directeur_affaire_financier%28daf%29_geoffroy_koudougou.png",
-    name: "M. Geoffroy KOUDOUGOU",
-    role: "Directeur des Ressources Humaines",
-    badge: "Ressources Humaines",
-    desc: "Gestion des talents, recrutement et développement des compétences.",
-    bg: "bg-amber-50",
-  },
-  {
     photo: "/images/teams/directeur-production_justin_kabre.png",
     name: "M. Justin KABRÉ",
     role: "Directeur Technique",
     badge: "Direction Technique",
     desc: "Supervision technique des installations, études d'ingénierie et qualité opérationnelle.",
     bg: "bg-orange-50",
+  },
+  {
+    photo: "/images/teams/directeur_affaire_financier%28daf%29_geoffroy_koudougou.png",
+    name: "M. Geoffroy KOUDOUGOU",
+    role: "Directeur des Ressources Humaines",
+    badge: "Ressources Humaines",
+    desc: "Gestion des talents, recrutement et développement des compétences.",
+    bg: "bg-amber-50",
   },
   {
     photo: "/images/teams/directrice-marketing_mme_alida_tapsoba%3Akabore.png",
@@ -63,6 +81,22 @@ export default function EquipePage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", url: "/" },
+            { name: "Équipe", url: "/equipe" },
+          ]),
+          webPageSchema({
+            type: "AboutPage",
+            url: "/equipe",
+            name: "Notre équipe — ALIA Industrie",
+            description:
+              "Eulogue Tapsoba et l'équipe dirigeante d'ALIA Industrie.",
+          }),
+        ]}
+        id="schema-equipe"
+      />
       <PageBanner
         number="05"
         title="Notre équipe"
@@ -157,7 +191,7 @@ export default function EquipePage() {
                 {[
                   [
                     `Plus de ${yearsSince2009} ans d'expertise`,
-                    "dans l'industrie burkinabè depuis la fondation d'ALIA en 2009.",
+                    "dans l'industrie burkinabè.",
                   ],
                   [
                     "Distinctions ministérielles 2024",

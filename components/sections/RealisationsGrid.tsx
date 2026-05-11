@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import {
   realisations,
@@ -28,15 +29,19 @@ const CATEGORY_BG: Record<RealisationCategory, string> = {
 function RealisationCard({
   r,
   onClick,
+  aosDelay,
 }: {
   r: Realisation;
   onClick: () => void;
+  aosDelay: number;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="realisation-card group relative overflow-hidden rounded-lg shadow-md hover:shadow-2xl shadow-alia-dark/10 cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[280px] text-left"
+      data-aos="fade-up"
+      data-aos-delay={aosDelay}
+      className="realisation-card group relative overflow-hidden rounded-lg shadow-md hover:shadow-2xl shadow-alia-dark/10 cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[280px] text-left w-full"
     >
       <Image
         src={r.image}
@@ -105,6 +110,13 @@ export default function RealisationsGrid() {
     []
   );
 
+  // Refresh AOS quand le filtre change → re-scan des cards
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      requestAnimationFrame(() => AOS.refreshHard?.() ?? AOS.refresh?.());
+    }
+  }, [activeFilter]);
+
   return (
     <>
       <section className="bg-gray-50 py-12 lg:py-16">
@@ -137,13 +149,12 @@ export default function RealisationsGrid() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
               {filtered.map((r, idx) => (
-                <div
+                <RealisationCard
                   key={r.id}
-                  data-aos="fade-up"
-                  data-aos-delay={(idx % 6) * 60}
-                >
-                  <RealisationCard r={r} onClick={() => setSelected(r)} />
-                </div>
+                  r={r}
+                  onClick={() => setSelected(r)}
+                  aosDelay={(idx % 6) * 60}
+                />
               ))}
             </div>
           )}

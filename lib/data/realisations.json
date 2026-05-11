@@ -1,0 +1,101 @@
+[
+  {
+    "id": "grand-bassam-45kwc",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Centrale solaire industrielle",
+    "location": "Grand Bassam, Côte d'Ivoire",
+    "metric": { "value": "45", "unit": "KWc" },
+    "year": "2023",
+    "image": "assets/images/realisations/grand-bassam.jpg",
+    "featured": true
+  },
+  {
+    "id": "yamoussoukro-25kwc",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Système solaire résidentiel",
+    "location": "Yamoussoukro, Côte d'Ivoire",
+    "metric": { "value": "24,78", "unit": "KWc" },
+    "year": "2022",
+    "image": "assets/images/realisations/yamoussoukro.jpg",
+    "featured": false
+  },
+  {
+    "id": "abidjan-16kwc",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Système solaire commercial",
+    "location": "Abidjan, Côte d'Ivoire",
+    "metric": { "value": "16", "unit": "KWc" },
+    "year": "2022",
+    "image": "assets/images/realisations/abidjan.jpg",
+    "featured": false
+  },
+  {
+    "id": "2ie-abidjan-9kwc",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Université 2iE — système académique",
+    "location": "Abidjan, Côte d'Ivoire",
+    "metric": { "value": "9,2", "unit": "KWc" },
+    "year": "2021",
+    "image": "assets/images/realisations/2ie-abidjan.jpg",
+    "featured": false
+  },
+  {
+    "id": "batiment-alia",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Autoconsommation siège ALIA",
+    "location": "Kossodo, Ouagadougou",
+    "metric": null,
+    "year": "2021",
+    "image": "assets/images/realisations/batiment-alia.png",
+    "featured": false
+  },
+  {
+    "id": "centrale-solaire",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Centrale solaire entreprise",
+    "location": "Burkina Faso",
+    "metric": null,
+    "year": "2020",
+    "image": "assets/images/realisations/centrale-solaire.png",
+    "featured": false
+  },
+  {
+    "id": "residentiel-particulier",
+    "category": "solaire",
+    "categoryLabel": "Énergie solaire",
+    "title": "Système résidentiel autonome",
+    "location": "Particulier, Burkina Faso",
+    "metric": null,
+    "year": "2020",
+    "image": "assets/images/realisations/residentiel.jpg",
+    "featured": false
+  },
+  {
+    "id": "minoterie-farine-mais",
+    "category": "agro",
+    "categoryLabel": "Agroalimentaire",
+    "title": "Minoterie — Farine de maïs ALIA",
+    "location": "Kossodo, Ouagadougou",
+    "metric": null,
+    "year": "2018",
+    "image": "assets/images/realisations/farine-mais.jpg",
+    "featured": false
+  },
+  {
+    "id": "maintenance-techniciens",
+    "category": "maintenance",
+    "categoryLabel": "Maintenance industrielle",
+    "title": "Intervention sur unité de transformation",
+    "location": "Burkina Faso",
+    "metric": null,
+    "year": "2023",
+    "image": "assets/images/realisations/maintenance-techniciens.jpg",
+    "featured": false
+  }
+]

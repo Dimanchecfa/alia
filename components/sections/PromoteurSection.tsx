@@ -81,7 +81,7 @@ export default function PromoteurSection() {
             </div>
 
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-alia-grey leading-[1.15] mb-7 tracking-tight">
-              Anticiper, <span className="text-alia-orange">innover</span>
+              Anticiper, <span className="text-alia-orange">innover</span>{" "}
               <br className="hidden sm:block" />
               et bâtir un <span className="text-alia-blue">futur durable</span>.
             </h2>

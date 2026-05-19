@@ -161,7 +161,7 @@ export default function RealisationsSection() {
               </div>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-alia-grey leading-[1.1] tracking-tight max-w-2xl">
                 De Ouagadougou à{" "}
-                <span className="text-alia-orange">Abidjan</span>,
+                <span className="text-alia-orange">Abidjan</span>,{" "}
                 <br className="hidden sm:block" />
                 nos <span className="text-alia-blue">projets parlent</span>.
               </h2>

@@ -99,7 +99,7 @@ export default function TeamGrid() {
             aria-label={`Voir ${m.title} ${m.firstName} ${m.lastName} — ${m.role}`}
             className={`group text-left cursor-pointer ${
               m.isDG
-                ? "order-first sm:col-span-2 lg:col-span-1 lg:order-none lg:scale-[1.12] lg:z-10 origin-center"
+                ? "order-first max-w-[16rem] sm:max-w-xs sm:col-span-2 sm:justify-self-center mx-auto lg:order-none lg:col-span-1 lg:max-w-none lg:mx-0 lg:justify-self-auto lg:scale-[1.12] lg:z-10 origin-center"
                 : ""
             }`}
             data-aos="fade-up"

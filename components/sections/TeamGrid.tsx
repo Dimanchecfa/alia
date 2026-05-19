@@ -98,7 +98,9 @@ export default function TeamGrid() {
             onClick={() => setSelected(m)}
             aria-label={`Voir ${m.title} ${m.firstName} ${m.lastName} — ${m.role}`}
             className={`group text-left cursor-pointer ${
-              m.isDG ? "lg:scale-[1.12] lg:z-10 origin-center" : ""
+              m.isDG
+                ? "order-first sm:col-span-2 lg:col-span-1 lg:order-none lg:scale-[1.12] lg:z-10 origin-center"
+                : ""
             }`}
             data-aos="fade-up"
             data-aos-delay={idx * 70}

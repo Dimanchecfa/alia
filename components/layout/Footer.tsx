@@ -57,9 +57,9 @@ export default function Footer() {
               La Qualité, La Vraie Satisfaction.
             </p>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs mb-6">
-              Industriel burkinabè depuis 2009, ALIA accompagne entreprises et
-              particuliers en agroalimentaire, énergies renouvelables et
-              distribution d&apos;équipements.
+              ALIA Industrie (créée en 2019) prolonge le savoir-faire d&apos;une
+              équipe industrielle burkinabè active depuis 2009 — agroalimentaire,
+              énergies renouvelables et distribution d&apos;équipements.
             </p>
             <div className="inline-flex items-center gap-2 text-xs text-gray-500">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-alia-orange" />

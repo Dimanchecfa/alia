@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   title:
     "ALIA Industrie — Agroalimentaire & Énergies Renouvelables au Burkina Faso",
   description:
-    "Industriel burkinabè depuis 2009 — minoterie 50 t/j (farine de maïs, semoule), installations solaires on/off-grid, distribution d'équipements industriels (SKF, ABB, Schneider, Victron). Distinctions ministérielles 2024.",
+    "ALIA Industrie (créée en 2019) — équipe industrielle burkinabè active depuis 2009. Minoterie 120 t/j (farine de maïs, semoule), installations solaires on/off-grid, distribution d'équipements industriels (SKF, ABB, Schneider, Victron). Distinctions ministérielles 2024.",
   alternates: { canonical: "/" },
   openGraph: {
     title:
       "ALIA Industrie — Agroalimentaire & Énergies Renouvelables au Burkina",
     description:
-      "Votre partenaire industriel depuis 2009 — 50 t/j de production maïs, solaire on/off-grid, 26+ références distribuées.",
+      "Votre partenaire industriel — équipe active depuis 2009, ALIA Industrie depuis 2019. 120 t/j de production maïs, solaire on/off-grid, 26+ références distribuées.",
     type: "website",
   },
 };

@@ -55,10 +55,10 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Badge "Depuis 2009" floating bottom-right */}
+            {/* Badge "Équipe depuis 2009" floating bottom-right */}
             <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 z-20 w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-alia-orange text-white flex flex-col items-center justify-center shadow-2xl shadow-alia-orange/40 border-4 border-white">
               <span className="text-[9px] uppercase tracking-[0.2em] text-white/80 font-semibold">
-                Depuis
+                Équipe
               </span>
               <span className="font-display font-extrabold text-2xl lg:text-3xl text-white leading-none mt-0.5">
                 2009
@@ -89,9 +89,12 @@ export default function AboutSection() {
 
             {/* Bio */}
             <p className="text-base text-gray-600 leading-relaxed mb-4">
-              Créée en{" "}
-              <strong className="text-alia-grey">2009</strong> à Ouagadougou,
-              ALIA Industrie est née d&apos;une vision : unir{" "}
+              Officiellement créée en{" "}
+              <strong className="text-alia-grey">2019</strong>
+              {" "}à Ouagadougou, ALIA Industrie prolonge le savoir-faire
+              d&apos;une équipe industrielle active{" "}
+              <strong className="text-alia-grey">depuis 2009</strong>
+              , portée par une vision : unir{" "}
               <strong className="text-alia-grey">
                 agroalimentaire durable
               </strong>{" "}
@@ -105,7 +108,7 @@ export default function AboutSection() {
             <p className="text-base text-gray-600 leading-relaxed mb-7">
               Spécialisée dans la transformation du maïs (gritz, farine,
               semoule) avec une capacité de{" "}
-              <strong className="text-alia-grey">50 tonnes par jour</strong>,
+              <strong className="text-alia-grey">120 tonnes par jour</strong>,
               l&apos;entreprise s&apos;engage dans une démarche qualité visant
               la norme <strong className="text-alia-grey">ISO 22000</strong>.
             </p>

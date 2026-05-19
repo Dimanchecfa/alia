@@ -100,7 +100,7 @@ export default function RealisationsPage() {
                 2009
               </p>
               <p className="text-[10.5px] uppercase tracking-[0.2em] text-gray-500 mt-1 font-semibold">
-                Depuis
+                Équipe active
               </p>
             </div>
           </div>

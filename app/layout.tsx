@@ -110,12 +110,6 @@ export const metadata: Metadata = {
     ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
 
-  icons: {
-    icon: [{ url: "/images/logo.png", type: "image/png" }],
-    apple: "/images/logo.png",
-  },
-
-  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({

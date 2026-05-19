@@ -198,7 +198,7 @@ export default function CataloguePage() {
             <div className="inline-flex flex-wrap items-center justify-center gap-4 lg:gap-6 text-xs text-gray-600 font-semibold">
               <span className="flex items-center gap-1.5">
                 <Factory className="w-3.5 h-3.5 text-alia-orange" />
-                50 t/jour
+                120 t/jour
               </span>
               <span className="text-gray-400">·</span>
               <span className="flex items-center gap-1.5">

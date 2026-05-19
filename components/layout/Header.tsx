@@ -9,7 +9,6 @@ import {
   Mail,
   Phone,
   MessageCircle,
-  Search,
   Menu,
   X,
 } from "lucide-react";
@@ -89,24 +88,21 @@ export default function Header() {
       </div>
 
       {/* ── Main bar ── */}
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 shrink-0 py-1"
+          className="group flex items-center shrink-0 py-1"
           aria-label="Accueil ALIA Industrie"
         >
           <Image
-            src="/images/logo.png"
-            alt=""
-            width={56}
-            height={56}
-            className="h-14 w-auto"
+            src="/images/logo-trim.png"
+            alt="ALIA Industrie"
+            width={220}
+            height={150}
+            className="h-20 lg:h-24 w-auto transition-transform duration-300 ease-out group-hover:scale-110"
             priority
           />
-          <span className="font-display font-extrabold text-xl lg:text-2xl text-alia-orange tracking-tight">
-            ALIA <span className="text-alia-grey">Industrie</span>
-          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -131,12 +127,6 @@ export default function Header() {
 
         {/* Right actions */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
-          <button
-            aria-label="Rechercher"
-            className="text-alia-grey hover:text-alia-blue transition"
-          >
-            <Search className="w-5 h-5" />
-          </button>
           <Link
             href="/contact#devis"
             className="bg-alia-orange hover:bg-alia-orange-dark text-white text-sm font-semibold px-6 py-3 rounded-full transition shadow-md shadow-alia-orange/30"

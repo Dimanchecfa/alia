@@ -11,19 +11,21 @@ import {
 } from "lucide-react";
 import PageBanner from "@/components/ui/PageBanner";
 import JsonLd from "@/components/seo/JsonLd";
+import TeamGrid from "@/components/sections/TeamGrid";
 import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
   title: "Notre équipe — Le promoteur Eulogue Tapsoba & l'équipe dirigeante",
   description:
-    "Rencontrez M. Eulogue Tapsoba, promoteur d'ALIA Industrie, ainsi que l'équipe dirigeante : DAF, DRH, Directeur Technique et Directrice Marketing. Une équipe burkinabè au service de l'industrie locale.",
+    "Rencontrez M. Eulogue Tapsoba, promoteur d'ALIA Industrie, ainsi que l'équipe dirigeante : Directeur Général, Directeur Technique, Responsable Marketing, Responsable Gestion des Stocks et Responsable Énergies Renouvelables. Une équipe burkinabè au service de l'industrie locale.",
   keywords: [
     "équipe ALIA Industrie",
     "Eulogue Tapsoba",
-    "Mathieu Compaoré DAF",
-    "Geoffroy Koudougou DRH",
+    "Mathieu Compaoré Directeur Général",
     "Justin Kabré Directeur Technique",
-    "Alida Tapsoba Marketing",
+    "Alida Tapsoba Responsable Marketing",
+    "Geoffroy Koudougou gestion des stocks",
+    "Frédéric Yoda énergies renouvelables",
     "promoteur burkinabè",
   ],
   alternates: { canonical: "/equipe" },
@@ -40,41 +42,6 @@ const LinkedInIcon = () => (
     <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76 0-.97.78-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.78 1.76-1.75 1.76zm13.5 12.27h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97v5.69h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6v6.46z" />
   </svg>
 );
-
-const team = [
-  {
-    photo: "/images/teams/directeur-alia_compaore_mathieu.png",
-    name: "M. Mathieu COMPAORÉ",
-    role: "Directeur Administratif & Financier",
-    badge: "Adm. & Finances",
-    desc: "Pilotage administratif, budgétaire et stratégie financière de l'entreprise.",
-    bg: "bg-alia-blue-soft",
-  },
-  {
-    photo: "/images/teams/directeur-production_justin_kabre.png",
-    name: "M. Justin KABRÉ",
-    role: "Directeur Technique",
-    badge: "Direction Technique",
-    desc: "Supervision technique des installations, études d'ingénierie et qualité opérationnelle.",
-    bg: "bg-orange-50",
-  },
-  {
-    photo: "/images/teams/directeur_affaire_financier%28daf%29_geoffroy_koudougou.png",
-    name: "M. Geoffroy KOUDOUGOU",
-    role: "Directeur des Ressources Humaines",
-    badge: "Ressources Humaines",
-    desc: "Gestion des talents, recrutement et développement des compétences.",
-    bg: "bg-amber-50",
-  },
-  {
-    photo: "/images/teams/directrice-marketing_mme_alida_tapsoba%3Akabore.png",
-    name: "Mme Alida TAPSOBA / KABORÉ",
-    role: "Directrice Marketing",
-    badge: "Direction Marketing",
-    desc: "Développement commercial, communication et relation clients.",
-    bg: "bg-emerald-50",
-  },
-];
 
 export default function EquipePage() {
   const yearsSince2009 = new Date().getFullYear() - 2009;
@@ -244,35 +211,8 @@ export default function EquipePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {team.map((m, idx) => (
-              <article key={m.name} className="group" data-aos="fade-up" data-aos-delay={idx * 100}>
-                <div
-                  className={`relative aspect-[4/5] rounded-lg overflow-hidden ${m.bg} mb-5 flex items-end justify-center transition-shadow duration-500 group-hover:shadow-2xl group-hover:shadow-alia-orange/30`}
-                >
-                  <span className="absolute top-4 left-4 z-10 bg-white text-alia-grey text-[10.5px] font-bold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full shadow-md">
-                    {m.badge}
-                  </span>
-                  <Image
-                    src={m.photo}
-                    alt={`${m.name} — ${m.role}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.06]"
-                  />
-                </div>
-                <h3 className="font-display font-bold text-lg text-alia-grey mb-1">
-                  {m.name}
-                </h3>
-                <p className="text-[10.5px] uppercase tracking-[0.18em] font-bold text-alia-orange mb-2">
-                  {m.role}
-                </p>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {m.desc}
-                </p>
-              </article>
-            ))}
-          </div>
+          {/* ── 5 cartes alignées — DG au centre (+12%) — Click → Modal ── */}
+          <TeamGrid />
         </div>
       </section>
 
@@ -318,7 +258,7 @@ export default function EquipePage() {
                   ALIA <span className="text-alia-orange">INDUSTRIE</span>
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.22em] font-bold text-gray-400">
-                  Kossodo, Ouagadougou · 2026
+                  Ouagadougou · 2026
                 </p>
               </div>
             </div>

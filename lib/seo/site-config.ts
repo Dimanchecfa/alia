@@ -8,9 +8,9 @@ export const siteConfig = {
   legalName: "ALIA Industrie",
   url: "https://alia-industrie-bf.com",
   description:
-    "Industriel burkinabè depuis 2009, ALIA Industrie unit agroalimentaire durable (farine de maïs, gritz, semoule) et énergies renouvelables au cœur du Burkina Faso.",
+    "ALIA Industrie, créée en 2019, prolonge un savoir-faire industriel développé par son équipe depuis 2009 : agroalimentaire durable (farine de maïs, gritz, semoule) et énergies renouvelables au cœur du Burkina Faso.",
   shortDescription:
-    "Agroalimentaire & énergies renouvelables — Burkina Faso depuis 2009.",
+    "Agroalimentaire & énergies renouvelables — équipe expérimentée depuis 2009, ALIA Industrie depuis 2019.",
   slogan: "La Qualité, La Vraie Satisfaction.",
   locale: "fr_BF",
   language: "fr",
@@ -71,7 +71,7 @@ export const siteConfig = {
     name: "Eulogue TAPSOBA",
     jobTitle: "Promoteur & Fondateur",
   },
-  foundingDate: "2009",
+  foundingDate: "2019",
   foundingLocation: "Ouagadougou, Burkina Faso",
 
   // Réseaux sociaux

@@ -24,7 +24,7 @@ import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schemas";
 export const metadata: Metadata = {
   title: "À propos d'ALIA Industrie — Histoire, valeurs, distinctions 2024",
   description:
-    "Industriel burkinabè depuis 2009, ALIA Industrie unit agroalimentaire durable (farine de maïs, 50 t/j) et énergies renouvelables. Découvrez notre histoire, nos valeurs et nos distinctions ministérielles 2024 (Étalon d'argent).",
+    "ALIA Industrie, créée en 2019, prolonge le savoir-faire d'une équipe industrielle burkinabè active depuis 2009 : agroalimentaire durable (farine de maïs, 120 t/j) et énergies renouvelables. Histoire, valeurs et distinctions ministérielles 2024 (Étalon d'argent).",
   keywords: [
     "histoire ALIA Industrie",
     "Eulogue Tapsoba",
@@ -91,7 +91,7 @@ export default function AProposPage() {
             url: "/a-propos",
             name: "À propos d'ALIA Industrie",
             description:
-              "Histoire, valeurs et distinctions d'ALIA Industrie, industriel burkinabè depuis 2009.",
+              "Histoire, valeurs et distinctions d'ALIA Industrie — créée en 2019, portée par une équipe industrielle burkinabè active depuis 2009.",
           }),
         ]}
         id="schema-a-propos"
@@ -103,7 +103,8 @@ export default function AProposPage() {
         breadcrumbLabel="À propos"
         subtitle={
           <>
-            Industriel burkinabè depuis 2009, ALIA Industrie unit{" "}
+            ALIA Industrie, créée en 2019, prolonge un savoir-faire industriel
+            développé par son équipe depuis 2009 — unissant{" "}
             <span className="text-white font-semibold">
               agroalimentaire durable
             </span>{" "}
@@ -150,10 +151,10 @@ export default function AProposPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Badge "Depuis 2009" */}
+                {/* Badge "Équipe depuis 2009" */}
                 <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 z-20 w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-alia-orange text-white flex flex-col items-center justify-center shadow-2xl shadow-alia-orange/40 border-4 border-white">
                   <span className="text-[9px] uppercase tracking-[0.2em] text-white/80 font-semibold">
-                    Depuis
+                    Équipe
                   </span>
                   <span className="font-display font-extrabold text-2xl lg:text-3xl text-white leading-none mt-0.5">
                     2009
@@ -182,9 +183,12 @@ export default function AProposPage() {
               </h2>
 
               <p className="text-base text-gray-600 leading-relaxed mb-5">
-                Créée en{" "}
-                <strong className="text-alia-grey font-semibold">2009</strong> à
-                Ouagadougou, ALIA Industrie est née d&apos;une vision : unir{" "}
+                Officiellement créée en{" "}
+                <strong className="text-alia-grey font-semibold">2019</strong>
+                {" "}à Ouagadougou, ALIA Industrie prolonge le savoir-faire
+                d&apos;une équipe industrielle active{" "}
+                <strong className="text-alia-grey font-semibold">depuis 2009</strong>
+                , portée par une vision : unir{" "}
                 <strong className="text-alia-grey font-semibold">
                   agroalimentaire durable
                 </strong>{" "}
@@ -199,7 +203,7 @@ export default function AProposPage() {
                 Spécialisée dans la transformation du maïs (gritz, farine,
                 semoule) avec une capacité de{" "}
                 <strong className="text-alia-grey font-semibold">
-                  50 tonnes par jour
+                  120 tonnes par jour
                 </strong>
                 , l&apos;entreprise s&apos;engage dans une démarche qualité
                 visant la norme{" "}
@@ -277,10 +281,10 @@ export default function AProposPage() {
                 <Calendar className="w-5 h-5 text-alia-orange" />
               </div>
               <p className="font-display font-extrabold text-3xl lg:text-4xl text-white leading-none">
-                2009
+                2019
               </p>
               <p className="text-[10.5px] uppercase tracking-[0.2em] text-gray-400 mt-2 font-semibold">
-                Année de création
+                Création ALIA Industrie
               </p>
             </div>
             <div className="text-center" data-aos="fade-up" data-aos-delay="100">
@@ -288,7 +292,7 @@ export default function AProposPage() {
                 <Wheat className="w-5 h-5 text-alia-orange" />
               </div>
               <p className="font-display font-extrabold text-3xl lg:text-4xl text-white leading-none">
-                50<span className="text-lg lg:text-xl text-alia-orange ml-1">t/j</span>
+                120<span className="text-lg lg:text-xl text-alia-orange ml-1">t/j</span>
               </p>
               <p className="text-[10.5px] uppercase tracking-[0.2em] text-gray-400 mt-2 font-semibold">
                 Capacité maïs

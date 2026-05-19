@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Nos services — Agroalimentaire, Énergies Renouvelables, Maintenance industrielle",
   description:
-    "Partenaire technique à chaque étape : conseil, installation solaire on/off-grid, transformation agroalimentaire (maïs 50t/j), distribution d'équipements et maintenance industrielle au Burkina Faso.",
+    "Partenaire technique à chaque étape : conseil, installation solaire on/off-grid, transformation agroalimentaire (maïs 120t/j), distribution d'équipements et maintenance industrielle au Burkina Faso.",
   keywords: [
     "services industriels Burkina",
     "installation solaire Ouagadougou",
@@ -181,7 +181,7 @@ export default function ServicesPage() {
                   <Factory className="w-6 h-6 text-alia-orange" />
                   <div>
                     <p className="font-display font-extrabold text-2xl text-alia-grey leading-none">
-                      50<span className="text-alia-orange">t/j</span>
+                      120<span className="text-alia-orange">t/j</span>
                     </p>
                     <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-gray-500 mt-0.5">
                       Capacité maïs
@@ -209,7 +209,7 @@ export default function ServicesPage() {
               </p>
               <ul className="space-y-3 mb-7">
                 {[
-                  ["Minoterie haute capacité", "50 tonnes par jour de production effective"],
+                  ["Minoterie haute capacité", "120 tonnes par jour de production effective"],
                   ["Démarche qualité ISO 22000", "sécurité alimentaire à chaque étape"],
                   ["Innovation produit", "recherche continue sur la granulométrie"],
                   ["Distribution nationale", "Burkina Faso et Côte d'Ivoire"],

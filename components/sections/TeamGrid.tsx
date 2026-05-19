@@ -201,7 +201,7 @@ function MemberModal({
         </button>
 
         <div
-          className={`relative w-full lg:w-1/2 aspect-[4/5] lg:aspect-auto lg:min-h-[28rem] ${member.bg} shrink-0`}
+          className={`relative w-full h-[42vh] sm:h-[48vh] lg:h-auto lg:w-1/2 lg:min-h-[28rem] ${member.bg} shrink-0`}
         >
           <Image
             src={member.photo}
